@@ -1,7 +1,7 @@
 import abc
 
 
-class Bank_account(abc.ABC):
+class BankAccount(abc.ABC):
     def __init__(self, agency, num_account, balance):
         self.agency = agency
         self.num_account = num_account
