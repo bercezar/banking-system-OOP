@@ -18,6 +18,15 @@ class BankAccount(abc.ABC):
     def test(self, msg):
         print(f'Saldo é {self.balance:.2f} {msg}')
 
+    def __repr__(self):
+        try:
+            class_name = type(self).__name__
+            attrs = f'({self.agency}, {self.num_account}, {
+                self.balance}, {self.limit})'
+            return f'{class_name}{attrs}'
+        except AttributeError:
+            return f'Não há limite em Conta Poupança'
+
 
 class SavingsAccount(BankAccount):
     def withdraw(self, value):
