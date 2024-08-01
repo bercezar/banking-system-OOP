@@ -24,14 +24,43 @@ class SavingsAccount(BankAccount):
 
         # Para a utilização do método withdraw(sacar), primeiro verifica-se se há balance(saldo) disponível. Será retornado o valor pós saque.
         postWithdrawalAmount = self.balance - value
-
         if postWithdrawalAmount >= 0:
             self.balance -= value
             self.test(f'Valor do saque é {value:.2f}')
             return self.balance
+
         # Caso entre na condição, não será executado por conta do return. Caso contrário, o print é executado.
         print(f'Saque negado: R$ {value:.2f}. Confira o seu saldo em conta.')
 
 
+class CheckingAccount(BankAccount):
+    def __init__(self, agency, num_account, balance, limit):
+        # Chama o construtor da classe pai para inicializar os atributos comuns
+        super().__init__(agency, num_account, balance)
+        self.limit = limit
+        # Adiciona o atributo específico da classe CheckingAccount.
+
+    def withdraw(self, value):
+
+        # Para a utilização do método withdraw(sacar), primeiro verifica-se se há balance(saldo) disponível. Será retornado o valor pós saque.
+        postWithdrawalAmount = self.balance - value
+
+        limit_max = -self.limit  # Limite da conta corrente
+
+        # Caso o cliente possua um saldo baixo e um valor de saque acima, o valor do pós saque seria negativo,logo "-self.limit"
+        if postWithdrawalAmount >= limit_max:
+            self.balance -= value
+            self.test(f'Valor do saque é {value:.2f}')
+            print(f'Limite utilizado: R$ {self.limit:.2f}. Saque confirmado.')
+            return self.balance
+
+        # Caso entre na condição, não será executado por conta do return. Caso contrário, o print é executado.
+        print(f'Não há limite disponível em sua conta corrente para saque')
+
+
 if __name__ == "__main__":
-    sa1 = SavingsAccount(100, 200, 300)  # TESTE
+    # sa1 = SavingsAccount(100, 200, 300)  # TESTE
+    # sa1.withdraw(500)  # Negado
+    ca1 = CheckingAccount(100, 200, 300, 100)  # TESTE
+    ca1.withdraw(400)  # Limite ultizado, saldo -100
+    ca1.withdraw(200)  # Limite não disponível
