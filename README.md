@@ -6,12 +6,12 @@
 
 O sistema é composto pelas seguintes classes:
 
-Pessoa: Representa uma pessoa com nome e idade.<br>
-Cliente: Herda de Pessoa e representa um cliente do banco, agregando uma conta bancária (pode ser conta corrente ou conta poupança).<br>
-Conta (ABC): Classe abstrata que define os atributos e métodos básicos de uma conta bancária.<br>
-ContaCorrente: Herda de Conta e inclui um limite extra para a conta corrente.<br>
-ContaPoupanca: Herda de Conta e representa uma conta poupança.<br>
-Banco: Agrega clientes e contas, sendo responsável por autenticar clientes e contas, além de gerenciar operações bancárias.<br>
+-Pessoa: Representa uma pessoa com nome e idade.<br>
+-Cliente: Herda de Pessoa e representa um cliente do banco, agregando uma conta bancária (pode ser conta corrente ou conta poupança).<br>
+-Conta (ABC): Classe abstrata que define os atributos e métodos básicos de uma conta bancária.<br>
+-ContaCorrente: Herda de Conta e inclui um limite extra para a conta corrente.<br>
+-ContaPoupanca: Herda de Conta e representa uma conta poupança.<br>
+-Banco: Agrega clientes e contas, sendo responsável por autenticar clientes e contas, além de gerenciar operações bancárias.<br>
 
 #### Funcionalidades
 
