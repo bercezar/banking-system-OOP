@@ -48,14 +48,15 @@ class Client(Person):
 
 
 if __name__ == "__main__":
-    cl1 = Client("Bernardo", date(2000, 12, 18))  # Teste
-    cl1.account = bank_accounts.CheckingAccount(200, 300, 500, 100)
-    cl1.account.withdraw(200)
-    print(cl1)
-    print(cl1.account)
+    # cl1 = Client("Bernardo", date(2000, 12, 18))  # Teste
+    # cl1.account = bank_accounts.CheckingAccount(200, 300, 500, 100)
+    # cl1.account.withdraw(200)
+    # print(cl1)
+    # print(cl1.account)
 
-    cl2 = Client("Rael", date(2024, 1, 26))  # Teste
-    cl2.account = bank_accounts.SavingsAccount(100, 500, 500)
-    cl2.account.withdraw(200)
-    print(cl2)
-    print(cl2.account)
+    # cl2 = Client("Rael", date(2024, 1, 26))  # Teste
+    # cl2.account = bank_accounts.SavingsAccount(100, 500, 500)
+    # cl2.account.withdraw(200)
+    # print(cl2)
+    # print(cl2.account)
+    pass
